@@ -6,7 +6,6 @@ public class Factorizer {
 
         //define variables
         int userNum;
-        int[] factors = new int[];
 
         //define Scanner
         Scanner inputReader = new Scanner(System.in);
@@ -17,6 +16,11 @@ public class Factorizer {
 
         System.out.println("The factors of "+ userNum +" are:");
 
+        for(int i=0; i<userNum +1;i++){
+            if(userNum % i == 0){
+                System.out.println(i);
+            }
+        }
 
 
     }
