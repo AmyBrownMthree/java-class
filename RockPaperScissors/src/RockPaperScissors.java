@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class RockPaperScissors {
 
-    //global instance variables
+    //global variables
     static int ties =0;
     static int userWins =0;
     static int computerWins =0;
@@ -45,18 +45,24 @@ public class RockPaperScissors {
             System.out.println("Would you like to play again? y/n");
             String exit = inputReader.nextLine().toLowerCase();
 
-            //decide if the user is done playing
-            if (exit.equals("n")){
-                //exits the application
-                finish = true;
-            }else{
-                //resets statistics for a new game
-                ties = 0;
-                userWins = 0;
-                computerWins = 0;
-            }
+            //asks the user if they are done playing and resets counters.
+            finish = checkContinue(exit);
 
         } while (!finish);
+    }
+
+    private static boolean checkContinue(String exit) {
+        // decide if the user is done playing
+        if (exit.equals("n")) {
+            // exits the application
+            return true;
+        } else {
+            // resets statistics for a new game
+            ties = 0;
+            userWins = 0;
+            computerWins = 0;
+            return false;
+        }
     }
 
     //Output the overall game statistics and scores to the console
